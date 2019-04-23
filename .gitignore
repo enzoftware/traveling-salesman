@@ -60,6 +60,8 @@ db.sqlite3
 instance/
 .webassets-cache
 
+.DS_Store
+
 # Scrapy stuff:
 .scrapy
 
@@ -71,6 +73,9 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# intellij
+.idea
 
 # pyenv
 .python-version
