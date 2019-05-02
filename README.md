@@ -4,11 +4,13 @@
 
 La generacion del archivo ```outfile.csv``` se hace por medio de python, solo por motivos didacticos. En futuras implementaciones se automitazara este proceso.
 
-Para generar el archivo corra:
+Para generar el archivo corra e ingrese el nombre del ```DISTRITO``` del que desea obtener la ruta:
 
 ```
 python3 read_file.py
+Ingresa el distrito : SURCO
 ```
+
 
 Esto generara el archivo con el cual trabajara la solucion.
 
