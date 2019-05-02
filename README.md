@@ -39,7 +39,7 @@ El problema del vendedor que viaja describe a un vendedor que debe viajar entre 
 
 Cada una de las soluciones estara separada en una rama distinta con los pasos para poder compilar el proyecto y el analisis de cada una de las implementaciones.
 
-- [Solucion backtracking]()
-- [Solucion ucs]()
+- [Solucion backtracking](https://github.com/enzoftware/tsp/tree/feature/backtrackingSolution)
+- [Solucion ucs](https://github.com/enzoftware/tsp/tree/feature/ucs_solution)
 
 ## Conlusiones:
