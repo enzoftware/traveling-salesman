@@ -52,4 +52,4 @@ def encontrarCodigo(indice):
 
 #inicio(G,'525701','552398')
 
-inicio(G,6,12)
+inicio(G,3,12)
