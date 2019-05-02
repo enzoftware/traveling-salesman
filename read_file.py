@@ -7,11 +7,12 @@ class HeaderEnum(Enum):
     DEP = 1
     PROV = 2
     DIST = 3
+    CODCP = 4
     MNOMCP = 6
-    Y_X_COORD = 17
+    XGD = 15
+    YGD = 16
 
-
-included_cols = [0, 1, 2, 3, 6, 17]  # the cols of the wanted data
+included_cols = [0, 1, 2, 3, 4, 6, 15, 16]  # the cols of the wanted data
 
 with open('cpoblados.csv', 'r') as fin, open('outfile.csv', 'w') as fout:  # choose an input file to read and
     # a destination output file

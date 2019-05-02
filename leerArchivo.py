@@ -2,12 +2,16 @@ from os import system
 import csv
 from ClaseGrafo import ClaseGrafo, Nodo
 
+
+def distancia(x1,y1,x2,y2):
+    return abs(x1-x2)+abs(y1-y2)
+
 def leerDataSet(nombreArchivo): #retorna un diccionario de los centros poblados
     vertices = {}
-    archivo = open(nombreArchivo,'r')
     try:
+        archivo = open(nombreArchivo)
         i = 0
-        for line in csv.reader(archivo,delimiter=','):
+        for line in archivo:
             if i == 0:
                 i += 1
                 continue
@@ -18,44 +22,16 @@ def leerDataSet(nombreArchivo): #retorna un diccionario de los centros poblados
                     dep = registro[1]
                     prov = registro[2]
                     dist = registro[3]
-                    mnomcp = registro[4]
-                    xycoord = float(registro[5])
+                    codcp = registro[4]
+                    mnomcp = registro[5]
+                    xcord = float(registro[6])
+                    ycord = float(registro[7])
                 except:
                     continue
-                vertices[ubigeo] = (Nodo(ubigeo,mnomcp,xycoord))
+                vertices[codcp] = (Nodo(codcp,mnomcp,xcord,ycord,dep,dist,prov,ubigeo))
+
     except FileNotFoundError:
         print("Archivo no encontrado.")
     finally:
         archivo.close()
     return vertices
-
-def leeLA(nombreArchivo): #retorna un grafo
-    grafo = ClaseGrafo()
-    try:
-        archivoAristas = open(nombreArchivo,'r')
-        lineas = archivoAristas.readlines()
-        n = len(lineas)
-        c = 0
-        
-        for linea in lineas:
-            linea = linea.replace('\n','')
-            codigos = linea.split(',')
-            nodo = codigos.pop(0)
-            vecinos = codigos
-            grafo.aristas[nodo] = vecinos
-            p = (c/float(n)) * 100
-            print("Leyendo aristas (" + str(round(p,2)) + "%)")
-            c+=1
-        
-    except FileNotFoundError:
-        print("Archivo no encontrado, el formato es: 'pesos.nombreArchivo' y 'nombreArchivo")
-    finally:
-        archivoAristas.close()
-    return grafo
-
-if __name__ == "__main__":
-    vertices = leerDataSet("outfile.csv")
-    for k in vertices:
-        print(vertices[k])
-    n = len(vertices)
-    print("%s elementos." % str(n))
