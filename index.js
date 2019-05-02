@@ -1,5 +1,6 @@
 const csv = require('csv-parser');
 const fs = require('fs');
+const performance = require('perf_hooks').performance;
 var results = [];
 var tour;
 
@@ -19,6 +20,7 @@ function matrix(m, n) {
 }
 
 
+var timeStart = performance.now();
 
 fs.createReadStream('outfile.csv')
     .pipe(csv())
@@ -93,4 +95,8 @@ fs.createReadStream('outfile.csv')
             length += tour[bestpath[i]][bestpath[i + 1]];
         length += tour[bestpath[cityNumbers - 1]][0];
         console.log(length);
+        var timeEnd = performance.now();
+        console.log("The problem for "+ results.length + " cities took "+ (timeEnd - timeStart) + " milliseconds");
     });
+
+
