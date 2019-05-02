@@ -32,6 +32,7 @@ fs.createReadStream('outfile.csv')
         var cityNumbers = results.length;
         for (var i = 0; i < results.length; i++) {
             for (var j = 0; j < results.length; j++) {
+                // This multiples per 100 to get a more realistic result
                 tour[i][j] = (Math.abs(results[i]['COORD_X'] - results[j]['COORD_X']) + Math.abs(results[i]['COORD_Y'] - results[j]['COORD_Y'])) * 100;
             }
         }
@@ -83,7 +84,7 @@ fs.createReadStream('outfile.csv')
         tsp_backtrack(1);
 
         for (var i = 0; i <= cityNumbers - 1; i++) {
-            console.log(bestpath[i]);
+            console.log(results[bestpath[i]]['NOMBRE']);
             console.log('->');
         }
 
