@@ -18,7 +18,7 @@ def ucs(G, s, e):
     gn[s] = 0
     while len(q) > 0:
         g, u = pq.heappop(q)
-        print(u)
+        print(encontrarCodigo(u))
         if not vis[u]:
             vis[u] = True
             if u == e:
@@ -40,6 +40,7 @@ def inicio(G,inicio,final):
     #path,gasto = ucs(G,encontrarIndice(inicio),encontrarIndice(final))
     path,gasto = ucs(G,inicio,final)
     print(gasto)
+    #print(path)
 
 
 def encontrarIndice(cod):
@@ -48,7 +49,7 @@ def encontrarIndice(cod):
             return v.index
 
 def encontrarCodigo(indice):
-    return vertices[indice].codigo
+    return vertices[indice].nombreCP
 
 #inicio(G,'525701','552398')
 
