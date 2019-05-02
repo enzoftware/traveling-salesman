@@ -11,5 +11,3 @@ def cargar(vertices):
         e+=1
     return matriz
 
-vertices=leerDataSet('outfile.csv')
-print(cargar(vertices))

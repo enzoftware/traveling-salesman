@@ -15,7 +15,8 @@ class ClaseGrafo:
 
     
 class Nodo:
-    def __init__(self,codigo,nombreCP,xgd,ygd,dep,dist,prov,ubigeo):
+    def __init__(self,codigo,nombreCP,xgd,ygd,dep,dist,prov,ubigeo,index):
+        self.index = index
         self.codigo = codigo
         self.nombreCP = nombreCP
         self.xgd = xgd

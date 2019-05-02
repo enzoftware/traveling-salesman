@@ -11,6 +11,7 @@ def leerDataSet(nombreArchivo): #retorna un diccionario de los centros poblados
     try:
         archivo = open(nombreArchivo)
         i = 0
+        e = 0
         for line in archivo:
             if i == 0:
                 i += 1
@@ -28,7 +29,8 @@ def leerDataSet(nombreArchivo): #retorna un diccionario de los centros poblados
                     ycord = float(registro[7])
                 except:
                     continue
-                vertices[codcp] = (Nodo(codcp,mnomcp,xcord,ycord,dep,dist,prov,ubigeo))
+                vertices[e] = (Nodo(codcp,mnomcp,xcord,ycord,dep,dist,prov,ubigeo,e))
+                e +=1
 
     except FileNotFoundError:
         print("Archivo no encontrado.")
