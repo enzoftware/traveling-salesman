@@ -10,13 +10,8 @@ def leerDataSet(nombreArchivo): #retorna un diccionario de los centros poblados
     vertices = {}
     try:
         archivo = open(nombreArchivo)
-        i = 0
         e = 0
         for line in archivo:
-            if i == 0:
-                i += 1
-                continue
-            else:
                 try:
                     registro = line.split(',')
                     ubigeo = registro[0]

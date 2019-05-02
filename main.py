@@ -8,6 +8,7 @@ vertices=leerDataSet('outfile.csv')
 G = cargar(vertices) 
 
 def ucs(G, s, e):
+    print('Camino: ')
     n    = len(G)
     vis  = [False]*n
     gn   = [INF]*n
@@ -17,24 +18,29 @@ def ucs(G, s, e):
     gn[s] = 0
     while len(q) > 0:
         g, u = pq.heappop(q)
+        print(u)
         if not vis[u]:
             vis[u] = True
             if u == e:
                 break
-            for v, w in G[u]:
+            
+            for par in G[u]:
+                v=par[0]
+                w=par[1]
                 if not vis[v]:
                     f = g + w
                     if f < gn[v]:
                         gn[v]   = f
-                        path[v] = encontrarCodigo(u)
-                        pq.heappush(q, (f, v))
+                        path[v] = u
+                        pq.heappush(q, (f, par[0]))
                         
     return path, gn
 
 def inicio(G,inicio,final):
-    path,gasto = ucs(G,encontrarIndice(inicio),encontrarIndice(final))
-    print(path)
+    #path,gasto = ucs(G,encontrarIndice(inicio),encontrarIndice(final))
+    path,gasto = ucs(G,inicio,final)
     print(gasto)
+
 
 def encontrarIndice(cod):
     for k,v in vertices.items():
@@ -42,8 +48,8 @@ def encontrarIndice(cod):
             return v.index
 
 def encontrarCodigo(indice):
-    for k,v in vertices.items():
-        if v.index == indice:
-            return v.codigo
+    return vertices[indice].codigo
 
-inicio(G,'525701','552398')
+#inicio(G,'525701','552398')
+
+inicio(G,6,12)

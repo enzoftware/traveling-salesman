@@ -7,7 +7,7 @@ def cargar(vertices):
         matriz.append([])
         for num, val in vertices.items():
             if num != key:
-                matriz[e].append((num,distancia(value.xgd,value.ygd,val.xgd,val.ygd)))
+                matriz[e].append([num,distancia(value.xgd,value.ygd,val.xgd,val.ygd)])
         e+=1
     return matriz
 
