@@ -27,3 +27,9 @@ npm start
 Al ser backtracking se probaran todas las posibles combinaciones para resolver el algoritmo, cabe resaltar que no es el metodo mas eficiente para resolver este problema.
 
 Se llamara al metodo ```tsp_backtrack()``` n! veces, siendo n el numero de ciudades por recorrer.
+Por lo tanto la complejidad de este algoritmo sera de ```O(n!)```
+
+Fuentes:
+- [Analysis of time complexity of travelling salesman problem](https://cs.stackexchange.com/questions/90149/analysis-of-time-complexity-of-travelling-salesman-problem)
+- [CompSCI: Intro IA](https://www.ics.uci.edu/~welling/teaching/271fall09/HW2_sol.pdf)
+- [Backtracking / Branch & Bound](https://www.win.tue.nl/~kbuchin/teaching/2IL15/backtracking.pdf)
