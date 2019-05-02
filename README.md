@@ -24,3 +24,6 @@ npm start
 
 ### Analisis: 
 
+Al ser backtracking se probaran todas las posibles combinaciones para resolver el algoritmo, cabe resaltar que no es el metodo mas eficiente para resolver este problema.
+
+Se llamara al metodo ```tsp_backtrack()``` n! veces, siendo n el numero de ciudades por recorrer.
