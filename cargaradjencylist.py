@@ -3,12 +3,13 @@ from leerArchivo import distancia, leerDataSet
 def cargar(vertices):
     matriz=[]
     e=0
-    for key, value in vertices:
+    for key, value in vertices.items():
         matriz.append([])
-        for num, val in vertices:
+        for num, val in vertices.items():
             if num != key:
-                matriz[e].append((num,distancia(value.xcord,value.ycord,val.xcord,val.ycord)))
+                matriz[e].append((num,distancia(value.xgd,value.ygd,val.xgd,val.ygd)))
         e+=1
+    return matriz
 
 vertices=leerDataSet('outfile.csv')
 print(cargar(vertices))
