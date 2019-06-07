@@ -1,6 +1,6 @@
 <img src="https://cdn-images-1.medium.com/max/1600/1*by3MgdkmamEAxlCaIH68Xg.jpeg" height="350px" align="center"/>
 
-# Trabajo Parcial: Traveling Salesman Problem
+# Trabajo Final: Traveling Salesman Problem
 ---
 ## Integrantes:
 - Enzo Lizama Paredes (u201618965)
@@ -39,8 +39,8 @@ El problema del vendedor que viaja describe a un vendedor que debe viajar entre 
 
 Cada una de las soluciones estara separada en una rama distinta con los pasos para poder compilar el proyecto y el analisis de cada una de las implementaciones.
 
-- [Solucion backtracking](https://github.com/enzoftware/tsp/tree/feature/backtrackingSolution)
-- [Solucion ucs](https://github.com/enzoftware/tsp/tree/feature/ucs_solution)
+- [Solucion DinamicPrograming](https://github.com/enzoftware/tsp/tree/feature/backtrackingSolution)
+- [Solucion Kruskal](https://github.com/enzoftware/tsp/tree/feature/ucs_solution)
 
 ## Conlusiones:
 
