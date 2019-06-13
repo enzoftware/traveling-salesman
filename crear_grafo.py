@@ -2,10 +2,10 @@ import csv
 from ClaseGrafo import ClaseGrafo, Nodo
 
 
-def distancia(x1,y1,x2,y2):
+def distanciaHamilton(x1,y1,x2,y2):
     return abs(x1-x2)+abs(y1-y2)
-
-
+def distanciaEuclides(x1,y1,x2,y2):
+    return ((x2-x1)**2 +(y2-y1)**2)**0.5
 
 def leerDataSet(nombreArchivo): #retorna un diccionario de los centros poblados
     centros = {}
@@ -25,6 +25,9 @@ def leerDataSet(nombreArchivo): #retorna un diccionario de los centros poblados
                     mnomcp = registro[5]
                     xcord = float(registro[6])
                     ycord = float(registro[7])
+                    
+                    #graphlist
+                    grafo.append([])
                 except:
                     continue
                 centros[e] = (e,Nodo(codcp,mnomcp,xcord,ycord,dep,dist,prov,ubigeo,e))
@@ -41,13 +44,21 @@ def leerDataSet(nombreArchivo): #retorna un diccionario de los centros poblados
     return centros, grafo
 
 
-def cargar(vertices):
-    matriz=[]
+def cargar(vertices, grafo):
     e=0
     for key, value in vertices.items():
-        matriz.append([])
         for num, val in vertices.items():
             if num != key:
-                matriz[e].append([num,distancia(value.xgd,value.ygd,val.xgd,val.ygd)])
+                grafo[e].append([num,distanciaEuclides(value[1].xgd,value[1].ygd,val[1].xgd,val[1].ygd)])
         e+=1
-    return matriz
+    return grafo
+
+centros,grafo = leerDataSet('outfile1.csv')
+listagrafo = cargar(centros,grafo)
+
+def printg(g):
+    for e in g:
+        print(e)
+        print('')
+
+printg(listagrafo)
