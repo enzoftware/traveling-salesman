@@ -49,16 +49,7 @@ def cargar(vertices, grafo):
     for key, value in vertices.items():
         for num, val in vertices.items():
             if num != key:
-                grafo[e].append([num,distanciaEuclides(value[1].xgd,value[1].ygd,val[1].xgd,val[1].ygd)])
+                grafo[e].append((num,distanciaEuclides(value[1].xgd,value[1].ygd,val[1].xgd,val[1].ygd)))
         e+=1
     return grafo
 
-centros,grafo = leerDataSet('outfile1.csv')
-listagrafo = cargar(centros,grafo)
-
-def printg(g):
-    for e in g:
-        print(e)
-        print('')
-
-printg(listagrafo)
