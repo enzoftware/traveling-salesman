@@ -63,6 +63,44 @@ start_time = time()
 centros6,grafo6 = leerDataSet('outfile3.csv')
 listagrafo = cargar(centros6,grafo6)
 
+
+
 print(kruskal(listagrafo))
 elapsed_time = time() - start_time
 print("Elapsed time: %0.10f seconds." % elapsed_time)
+
+import matplotlib.pyplot as plt
+
+#Config mapa
+plt.figure(figsize=(15,10))
+plt.title("Mapa")
+plt.xlabel("Coord X")
+plt.ylabel("Coord Y")
+
+#Pintando mapa
+x = []
+y = []
+for cep in centros6.values():
+    x.append(cep[1].xgd)
+    y.append(cep[1].ygd)
+
+
+plt.plot(x,y,'ro')
+def buscarCentroPoblado(codigo):
+    for cep in centros6:
+        if cep.codigo == codigo:
+            return cep
+def pintarAristas(aristas,color):
+    for arista in aristas:
+        _,origen,destino = arista
+        o = buscarCentroPoblado(origen)
+        d = buscarCentroPoblado(destino)
+        x = [o.coordX,d.coordX]
+        y = [o.coordY,d.coordY]
+        plt.plot(x,y,color=color,marker="8",markerEdgeColor="black")
+    
+#Pintar grafo
+#pintarAristas(listagrafo,"blue")
+#Pintar arbol de expansion minima
+#pintarAristas(arbolExpMin,"white")
+plt.show()
