@@ -43,3 +43,5 @@ Cada una de las soluciones estara separada en una rama distinta con los pasos pa
 - [Solucion ucs](https://github.com/enzoftware/tsp/tree/feature/ucs_solution)
 
 ## Conlusiones:
+
+Al finalizar el trabajo se concluye que ninguno de los algoritmos propuestos es el indicado para resolver el TSP, es preciso indicar que las implementaciones desarrolladas han sido limitadas por el tipo de algoritmos que se podian utilizar. 
