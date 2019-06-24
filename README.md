@@ -49,7 +49,7 @@ Al finalizar el trabajo se concluye que ninguno de los algoritmos propuestos es 
 ## Bibliografia:
 - https://www.youtube.com/watch?v=3rrNH_AizMA
 - https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/
-- 
--
+- https://www.hackerearth.com/blog/developers/kruskals-minimum-spanning-tree-algorithm-example/
+- https://www.geeksforgeeks.org/union-find-algorithm-set-2-union-by-rank/
 
 
