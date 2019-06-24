@@ -45,3 +45,11 @@ Cada una de las soluciones estara separada en una rama distinta con los pasos pa
 ## Conlusiones:
 
 Al finalizar el trabajo se concluye que ninguno de los algoritmos propuestos es el indicado para resolver el TSP, es preciso indicar que las implementaciones desarrolladas han sido limitadas por el tipo de algoritmos que se podian utilizar. 
+
+## Bibliografia:
+- https://www.youtube.com/watch?v=3rrNH_AizMA
+- https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/
+- 
+-
+
+
