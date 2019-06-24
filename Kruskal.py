@@ -72,7 +72,11 @@ def obtenerKruskal(numero):
         centros,grafo = leerDataSet('outfile3.csv')
     
     listagrafo = cargar(centros,grafo)
+    start_time = time()
     _, MST = kruskal(listagrafo)
+    print(MST)
+    elapsed_time = time() - start_time
+    print("Elapsed time: %0.10f seconds." % elapsed_time)
     return MST
 #print(kruskal(G))
 start_time = time()
@@ -120,5 +124,5 @@ def pintarAristas(aristas,color):
 #Pintar grafo
 #pintarAristas(listagrafo,"blue")
 #Pintar arbol de expansion minima
-pintarAristas(MST,"blue")
-plt.show()
+#pintarAristas(MST,"blue")
+#plt.show()
