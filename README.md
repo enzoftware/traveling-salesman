@@ -52,5 +52,6 @@ Al finalizar el trabajo se concluye que ninguno de los algoritmos propuestos es 
 - https://www.hackerearth.com/blog/developers/kruskals-minimum-spanning-tree-algorithm-example/
 - https://www.geeksforgeeks.org/union-find-algorithm-set-2-union-by-rank/
 - http://www.ams.sunysb.edu/~estie/courses/301/app_tsp.pdf
+- https://towardsdatascience.com/mapping-geograph-data-in-python-610a963d2d7f
 
 
