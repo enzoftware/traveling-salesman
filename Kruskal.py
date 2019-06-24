@@ -60,12 +60,12 @@ with open('grafito.in') as f:
 '''
 #print(kruskal(G))
 start_time = time()
-centros6,grafo6 = leerDataSet('outfile3.csv')
+centros6,grafo6 = leerDataSet('outfile2.csv')
 listagrafo = cargar(centros6,grafo6)
 
 
 
-print(kruskal(listagrafo))
+roots, MST = kruskal(listagrafo)
 elapsed_time = time() - start_time
 print("Elapsed time: %0.10f seconds." % elapsed_time)
 
@@ -86,21 +86,24 @@ for cep in centros6.values():
 
 
 plt.plot(x,y,'ro')
-def buscarCentroPoblado(codigo):
-    for cep in centros6:
-        if cep.codigo == codigo:
-            return cep
+def buscarCentroPoblado(orden):
+    for cep in centros6.values():
+        if cep[0] == orden:
+            return cep[1]
 def pintarAristas(aristas,color):
     for arista in aristas:
-        _,origen,destino = arista
+        origen,destino,_ = arista
         o = buscarCentroPoblado(origen)
         d = buscarCentroPoblado(destino)
-        x = [o.coordX,d.coordX]
-        y = [o.coordY,d.coordY]
+        x = [o.xgd,d.xgd]
+        y = [o.ygd,d.ygd]
         plt.plot(x,y,color=color,marker="8",markerEdgeColor="black")
+
+#def pintarMST():
+  #  for 
     
 #Pintar grafo
 #pintarAristas(listagrafo,"blue")
 #Pintar arbol de expansion minima
-#pintarAristas(arbolExpMin,"white")
+pintarAristas(MST,"blue")
 plt.show()
