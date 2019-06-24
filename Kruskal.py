@@ -63,9 +63,20 @@ with open('grafito.in') as f:
         for i in range(len(nums) // 2):
             G[u].append((nums[i * 2], nums[i * 2 + 1]))
 '''
+def obtenerKruskal(numero):
+    if numero == 1:
+        centros,grafo = leerDataSet('outfile1.csv')
+    if numero == 2:
+        centros,grafo = leerDataSet('outfile2.csv')
+    if numero == 3:
+        centros,grafo = leerDataSet('outfile3.csv')
+    
+    listagrafo = cargar(centros,grafo)
+    _, MST = kruskal(listagrafo)
+    return MST
 #print(kruskal(G))
 start_time = time()
-centros6,grafo6 = leerDataSet('outfile2.csv')
+centros6,grafo6 = leerDataSet('outfile3.csv')
 listagrafo = cargar(centros6,grafo6)
 
 
@@ -104,8 +115,7 @@ def pintarAristas(aristas,color):
         y = [o.ygd,d.ygd]
         plt.plot(x,y,color=color,marker="8",markerEdgeColor="black")
 
-#def pintarMST():
-  #  for 
+
     
 #Pintar grafo
 #pintarAristas(listagrafo,"blue")
