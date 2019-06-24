@@ -6,9 +6,8 @@ def find(s, a):
     if s[a] < 0:
         return a
     else:
-        granpa = find(s, s[a])
-        s[a] = granpa
-        return granpa
+        return find(s, s[a])
+        
 
 
 def union(s, a, b):
@@ -22,6 +21,12 @@ def union(s, a, b):
     elif s[pb] < s[pa]:
         s[pb] += s[pa]
         s[pa] = pb
+
+def naiveunion(s,a,b):
+    pa = find(s, a) 
+    pb = find(s, b)
+    s[pa] = pb
+
 
 
 def makeIL(G):
