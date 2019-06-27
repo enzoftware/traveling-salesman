@@ -13,9 +13,6 @@ Solucionar el problema orientado a distritos y sus centros poblados.
 
 Complejidad : ```O(n^2 2^n)```
 
-## Analisis:
-
-
 ## Tiempos
 
 | # Centros Poblados | Tiempo ms   | Nombre                  |
