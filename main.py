@@ -5,20 +5,15 @@ from helpers import *
 from bitwise_manipulation import *
 import json, time
 from load_matrix import cargar
-from read_file import distancia, leerDataSet
+from read_file import distancia, leerDataSet, imprimirRes
 from filter_cpobaldos import readGenerate
 
 a = []
 random_size = 10
 
-def choose(n):
+def choose():
 	global a, random_size
-	if n == 1:
-		print("Enter the number of cities:")
-		random_size = int(input())
-		a = generateGraph(random_size)
-	if n == 2:
-		a = readFromFile()
+	a = readFromFile()
 
 def generateSubsets(n):
 	l = []
@@ -64,12 +59,12 @@ def tsp():
 
 	Cost = cost[2**n-2][0]
 	print(Cost)
+	imprimirRes(path)
 	print("Time Taken: %f milliseconds" % (diff * 1000))
 
 
 if __name__ =="__main__":
-	# readGenerate()
-	vertex = leerDataSet('outfile.csv')
-	choice = int(input("Enter the choice:\n1 - Generate random Input\n2 - Read from \"input.json\" file\n"))
-	choose(choice)
+	choice = str(input("Ingresa el nombre del distrito a solucionar:  "))
+	readGenerate(choice)
+	choose()
 	tsp()

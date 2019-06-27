@@ -32,3 +32,32 @@ def leerDataSet(nombreArchivo): #retorna un diccionario de los centros poblados
     finally:
         archivo.close()
     return vertices
+
+def imprimirRes(path):
+    cities = {}
+    try:
+        archivo = open('outfile.csv')
+        e = 0
+        for line in archivo:
+                try:
+                    registro = line.split(',')
+                    ubigeo = registro[0]
+                    dep = registro[1]
+                    prov = registro[2]
+                    dist = registro[3]
+                    codcp = registro[4]
+                    mnomcp = registro[5]
+                    xcord = float(registro[6])
+                    ycord = float(registro[7])
+                except:
+                    continue
+                cities[e] = mnomcp
+                e +=1
+
+    except FileNotFoundError:
+        print("Archivo no encontrado.")
+    finally:
+        archivo.close()
+    for i in path:
+        print(cities[int(i) - 1 ])
+        print(" ")
