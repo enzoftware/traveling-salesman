@@ -4,6 +4,9 @@ from math import isinf
 from helpers import *
 from bitwise_manipulation import *
 import json, time
+from load_matrix import cargar
+from read_file import distancia, leerDataSet
+from filter_cpobaldos import readGenerate
 
 a = []
 random_size = 10
@@ -65,6 +68,8 @@ def tsp():
 
 
 if __name__ =="__main__":
+	# readGenerate()
+	vertex = leerDataSet('outfile.csv')
 	choice = int(input("Enter the choice:\n1 - Generate random Input\n2 - Read from \"input.json\" file\n"))
 	choose(choice)
 	tsp()
