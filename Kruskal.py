@@ -77,7 +77,7 @@ def obtenerKruskal(numero):
     print(MST)
     elapsed_time = time() - start_time
     print("Elapsed time: %0.10f seconds." % elapsed_time)
-    return MST, centros
+    return MST, centros, listagrafo
 #print(kruskal(G))
 '''
 start_time = time()
@@ -104,6 +104,16 @@ def pintarAristas(aristas,color,centros):
         x = [o.xgd,d.xgd]
         y = [o.ygd,d.ygd]
         plt.plot(x,y,color=color,marker="8",markerEdgeColor="black")
+
+def pintarGrafos(grafo,color,centros):
+    for i in range(len(grafo)):
+        for nodo in grafo[i]:
+            destino,_ = nodo
+            o = buscarCentroPoblado(i,centros)
+            d = buscarCentroPoblado(nodo[0], centros)
+            x = [o.xgd,d.xgd]
+            y = [o.ygd,d.ygd]
+            plt.plot(x,y,color=color,marker="8",markerEdgeColor="black")
 
 
     

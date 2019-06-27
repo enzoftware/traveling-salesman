@@ -2,10 +2,10 @@ import numpy as np
 import seaborn as sns
 import shapefile as shp
 import matplotlib.pyplot as plt
-from Kruskal import pintarAristas,obtenerKruskal
+from Kruskal import pintarAristas,obtenerKruskal, pintarGrafos
 
 
-MST, centros =obtenerKruskal(3)
+MST, centros, grafo =obtenerKruskal(1)
 
 sns.set(style="whitegrid", palette="pastel", color_codes=True)
 sns.mpl.rc("figure", figsize=(10,6))
@@ -45,5 +45,8 @@ for cep in centros.values():
     y.append(cep[1].ygd)
 
 plt.plot(x,y,'ro')
+pintarGrafos(grafo,"red",centros)
 pintarAristas(MST,"blue",centros)
+
+
 plt.show()
