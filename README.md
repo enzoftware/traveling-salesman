@@ -6,6 +6,11 @@
 - Enzo Lizama Paredes (u201618965)
 - Miguel Delgado Castillo (u201615527)
 
+## Requisitos:
+- python -m pip install -U pip
+- pip install seaborn
+-
+
 ## Introduccion:
 
 :thinking: : "Dada una lista de ciudades y las distancias entre cada par de ciudades, ¿cuál es la ruta más corta posible que visita cada ciudad y regresa a la ciudad de origen?"
