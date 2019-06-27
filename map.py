@@ -4,6 +4,9 @@ import shapefile as shp
 import matplotlib.pyplot as plt
 from Kruskal import pintarAristas,obtenerKruskal
 
+
+MST, centros =obtenerKruskal(3)
+
 sns.set(style="whitegrid", palette="pastel", color_codes=True)
 sns.mpl.rc("figure", figsize=(10,6))
 
@@ -33,6 +36,14 @@ def plot_map(sf, x_lim = None, y_lim = None, figsize = (11,9)):
 
 plot_map(sf)
 
-pintarAristas(obtenerKruskal(3),"blue")
 
+#Pintando mapa
+x = []
+y = []
+for cep in centros.values():
+    x.append(cep[1].xgd)
+    y.append(cep[1].ygd)
+
+plt.plot(x,y,'ro')
+pintarAristas(MST,"blue",centros)
 plt.show()

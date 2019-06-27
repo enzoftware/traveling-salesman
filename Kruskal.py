@@ -77,44 +77,30 @@ def obtenerKruskal(numero):
     print(MST)
     elapsed_time = time() - start_time
     print("Elapsed time: %0.10f seconds." % elapsed_time)
-    return MST
+    return MST, centros
 #print(kruskal(G))
+'''
 start_time = time()
 centros6,grafo6 = leerDataSet('outfile3.csv')
 listagrafo = cargar(centros6,grafo6)
 
-
-
 roots, MST = kruskal(listagrafo)
 elapsed_time = time() - start_time
 print("Elapsed time: %0.10f seconds." % elapsed_time)
-
+'''
 import matplotlib.pyplot as plt
 
-#Config mapa
-plt.figure(figsize=(15,10))
-plt.title("Mapa")
-plt.xlabel("Coord X")
-plt.ylabel("Coord Y")
-
-#Pintando mapa
-x = []
-y = []
-for cep in centros6.values():
-    x.append(cep[1].xgd)
-    y.append(cep[1].ygd)
 
 
-plt.plot(x,y,'ro')
-def buscarCentroPoblado(orden):
-    for cep in centros6.values():
+def buscarCentroPoblado(orden,centros):
+    for cep in centros.values():
         if cep[0] == orden:
             return cep[1]
-def pintarAristas(aristas,color):
+def pintarAristas(aristas,color,centros):
     for arista in aristas:
         origen,destino,_ = arista
-        o = buscarCentroPoblado(origen)
-        d = buscarCentroPoblado(destino)
+        o = buscarCentroPoblado(origen,centros)
+        d = buscarCentroPoblado(destino, centros)
         x = [o.xgd,d.xgd]
         y = [o.ygd,d.ygd]
         plt.plot(x,y,color=color,marker="8",markerEdgeColor="black")
