@@ -9,7 +9,7 @@
 ## Requisitos:
 - python -m pip install -U pip
 - pip install seaborn
--
+- pip install pyshp
 
 ## Introduccion:
 
