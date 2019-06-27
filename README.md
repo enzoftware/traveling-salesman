@@ -4,13 +4,14 @@
 ---
 
 ## Introduccion:
-
+La programación dinámica es un método para reducir el tiempo de ejecución de un algoritmo mediante la utilización de subproblemas superpuestos y subestructuras óptimas, como se describe a continuación.
 
 ## Objetivos :
-
+Solucionar el problema orientado a distritos y sus centros poblados.
 
 ## Marco teorico:
 
+Complejidad : ```O(n^2 2^n)```
 
 ## Analisis:
 
