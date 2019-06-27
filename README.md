@@ -41,8 +41,8 @@ Cada una de las soluciones estara separada en una rama distinta con los pasos pa
 
 - [Solucion backtracking](https://github.com/enzoftware/tsp/tree/feature/backtrackingSolution)
 - [Solucion ucs](https://github.com/enzoftware/tsp/tree/feature/ucs_solution)
-- [Solucion dynamic programming](https://github.com/enzoftware/tsp/tree/feature/dyanmic_programming_solution)
-- [Solucion kruskal](https://github.com/enzoftware/tsp/tree/feature/kruskal_solution)
+- [Solucion dynamic programming](https://github.com/enzoftware/tsp/tree/feature/dynamic-programming-solution)
+- [Solucion kruskal](https://github.com/enzoftware/tsp/tree/feature/kruskal-solution)
 
 ## Conlusiones:
 
