@@ -1,19 +1,35 @@
-# tsp
-Solution of Traveling Salesman Problem.
+<img src="https://showme0-9071.kxcdn.com/files/67452/pictures/thumbs/229680/first_thumb1337998020.jpg" height="250px"/>
+
+## Traveling Salesman Problem : Backtracking 
+
+La generacion del archivo ```outfile.csv``` se hace por medio de python, solo por motivos didacticos. En futuras implementaciones se automitazara este proceso.
+
+Para generar el archivo corra e ingrese el nombre del ```DISTRITO``` del que desea obtener la ruta:
+
+```
+python3 read_file.py
+Ingresa el distrito : SURCO
+```
 
 
-### Algoritmo
-----
-desarrollado con python y utilizando archivos csv para obtener la data necesaria.
+Esto generara el archivo con el cual trabajara la solucion.
 
-  1. abrimos el archivo csv dado y obtenemos un nuevo archivo con los campos necesarios y segun una region
-  2. guardo los datos de cada localidad en un diccionario 
-  3. luego obtengo una lista de adyacencia con pesos de ese diccionario
-  4. se le aplica el algoritmo ucs estudiado en clase
-  5. obtengo las localidades recorridas de incio a fin y los pesos de los caminos tomados.
+Esta solucion esta desarrollada con Javascript, por lo tanto es requisito tener instalado NodeJS.
+
+Para poder empezar el proyecto se de correr los siguientes comandos : 
+```
+npm install
+npm start
+```
+
+### Analisis: 
+
+Al ser backtracking se probaran todas las posibles combinaciones para resolver el algoritmo, cabe resaltar que no es el metodo mas eficiente para resolver este problema.
+
+Se llamara al metodo ```tsp_backtrack()``` n! veces, siendo n el numero de ciudades por recorrer.
+Por lo tanto la complejidad de este algoritmo sera de ```O(n!)```
 
 Fuentes:
-
-- [Algoritmo de costo uniforme (UCS)] (<https://es.coursera.org/lecture/resolucion-busqueda/algoritmo-de-costo-uniforme-ucs-W4vmS)>
-
-- [Uniform-cost search (UCS)](https://mhesham.wordpress.com/2010/04/08/problem-solving-techniques-part2/)
+- [Analysis of time complexity of travelling salesman problem](https://cs.stackexchange.com/questions/90149/analysis-of-time-complexity-of-travelling-salesman-problem)
+- [CompSCI: Intro IA](https://www.ics.uci.edu/~welling/teaching/271fall09/HW2_sol.pdf)
+- [Backtracking / Branch & Bound](https://www.win.tue.nl/~kbuchin/teaching/2IL15/backtracking.pdf)
